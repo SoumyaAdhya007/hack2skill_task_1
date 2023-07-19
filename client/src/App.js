@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import getListData from "./service/api";
 import {
@@ -14,7 +14,7 @@ import {
   styled,
 } from "@mui/material";
 const TableCont = styled(TableContainer)`
-  width: 98%;
+  width: 90vw;
   margin: auto;
 `;
 const TableBox = styled(Table)`
@@ -76,13 +76,14 @@ function App() {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableBodyCell component="th" scope="row">
-                    {item.Team_name}
+                    {i + 1}
                   </TableBodyCell>
-                  <TableBodyCell align="right">{item.full_name}</TableBodyCell>
-                  <TableBodyCell align="right">{item.email}</TableBodyCell>
-                  <TableBodyCell align="right">{item.number}</TableBodyCell>
-                  <TableBodyCell align="right">{item.city}</TableBodyCell>
-                  <TableBodyCell align="right">{item.url}</TableBodyCell>
+                  <TableBodyCell>{item.Team_name}</TableBodyCell>
+                  <TableBodyCell>{item.full_name}</TableBodyCell>
+                  <TableBodyCell>{item.email}</TableBodyCell>
+                  <TableBodyCell>{item.number}</TableBodyCell>
+                  <TableBodyCell>{item.city}</TableBodyCell>
+                  <TableBodyCell>{item.url}</TableBodyCell>
                 </TableBodyRow>
               ))
             ) : loading === false ? (
